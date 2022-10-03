@@ -16,15 +16,15 @@
             List<int> evenNumbers = FilterArray(numbers, evenPredicate);
             
             //Display the list
-            foreach(int number in evenNumbers)
-            {
-                Console.Write($"{ number } ");
-            }
+            DisplayList("Even Numbers",evenNumbers);
+            
             
         }
 
         // function that will return true or false if the number is even or odd.
         private static bool isEven(int number) => number % 2 == 0;
+
+        private static bool isOdd(int number) => number % 2 == 1;
 
         //Filter a an array with the evenPredicate above
         private static List<int> FilterArray(int[] intArray, NumberPredicate predicate)
@@ -39,6 +39,15 @@
 
             }
             return result; 
+        }
+        private static void DisplayList(string description, List<int> list)
+        {
+            Console.Write(description);
+            foreach(var number in list)
+            {
+                Console.Write($"{number} ");
+            }
+            Console.WriteLine();
         }
     }
 }
