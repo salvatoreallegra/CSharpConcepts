@@ -19,6 +19,32 @@
             Console.WriteLine("\n");
             //print out the first number in collection
             Console.WriteLine(evenNumbers.First());
+
+            string sunnyInVegas = "It's always sunny in Las Vegas";
+            useLinqOnString(sunnyInVegas);
+
+            string[] exoticCars = { "Ferrari", "Lamborghini", "Bugatti", "McLaren" };
+            useLinqOnStringArray(exoticCars);
+
+        }
+
+        private static  void useLinqOnString(string inputString)
+        {
+            var ichar = from indChar in inputString
+                                    where indChar.Equals("i")
+                                    select indChar;
+            
+        }
+        private static void useLinqOnStringArray(string[] inputArray)
+        {
+            var carWithG = from exoticCar in inputArray
+                    where exoticCar.Contains("g")
+                    select exoticCar;
+
+            foreach (string car in carWithG)
+            {
+                Console.WriteLine(car);
+            }
         }
     }
 }
