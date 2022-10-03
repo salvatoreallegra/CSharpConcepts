@@ -8,6 +8,7 @@
             int[] numbers = { 3, 4, 5, 18, 22, 11, 90, 45, 78, 12 };
             var evenNumbers = from number in numbers
                               where number % 2 == 0
+                              orderby number
                               select number;
             
             //Loop over and print the values
@@ -16,25 +17,13 @@
                 Console.WriteLine(number);
             }
 
-            Console.WriteLine("\n");
-            //print out the first number in collection
-            Console.WriteLine(evenNumbers.First());
-
-            string sunnyInVegas = "It's always sunny in Las Vegas";
-            useLinqOnString(sunnyInVegas);
+                   
 
             string[] exoticCars = { "Ferrari", "Lamborghini", "Bugatti", "McLaren" };
             useLinqOnStringArray(exoticCars);
 
         }
-
-        private static  void useLinqOnString(string inputString)
-        {
-            var ichar = from indChar in inputString
-                                    where indChar.Equals("i")
-                                    select indChar;
-            
-        }
+               
         private static void useLinqOnStringArray(string[] inputArray)
         {
             var carWithG = from exoticCar in inputArray
