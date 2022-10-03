@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharsAndStrings", "CharsAnd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArraysAndLists", "ArraysAndLists\ArraysAndLists.csproj", "{CD4C1BA3-EBC4-4F68-8C00-A4D8E35C1008}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Delegates.csproj", "{4271610E-2478-45AA-9B28-F7BB775220E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesEventsLambdaExpressions", "Delegates\DelegatesEventsLambdaExpressions.csproj", "{4271610E-2478-45AA-9B28-F7BB775220E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq", "Linq\Linq.csproj", "{B7980510-8BB9-47F4-B041-1CC020982B6E}"
 EndProject
