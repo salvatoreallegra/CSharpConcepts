@@ -1,13 +1,28 @@
 ﻿namespace Delegates
 {
-    internal class Delegate
+    internal class DelegateEventLambda
     {
         //Declare a delegate the returns a boolean and takes a number
         //a delegate is actually a reference type, like a class, interface or record 
         public delegate bool NumberPredicate(int number);
         static void Main(string[] args)
         {
-            int[] numbers = {1,2,3,4,5,6,7,8,9,10};
+            int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            List<int> listOfNumbers = new List<int>() { 2, 3, 4, 77, 99, 1023, 5, 8, 43 };
+
+            //Sum everything in the list
+            var aggregate = listOfNumbers.Aggregate((a, b) => a + b);
+            Console.WriteLine("Aggregate {0}",aggregate);
+
+            var x = listOfNumbers.First();
+            Console.WriteLine(x);
+           
+            /*foreach(int number in aggregate)
+            {
+                Console.WriteLine("aggregate {0}", number);
+            }
+*/
 
             //Assign the IsEven function to the variable of type Number Predicate
             //*Note that we can do this since the IsEven method has the same signature
@@ -18,9 +33,9 @@
             Console.WriteLine($"Calling Even Predicate: {evenPredicate(5)}");
 
             List<int> evenNumbers = FilterArray(numbers, evenPredicate);
-            
+
             //Display the list
-            DisplayList("Even Numbers",evenNumbers);
+            DisplayList("Even Numbers", evenNumbers);
 
             List<int> oddNumbers = FilterArray(numbers, IsOdd);
             DisplayList("Odd Numbers", oddNumbers);
@@ -28,8 +43,8 @@
             List<int> numbersGreaterThan5 = FilterArray(numbers, IsOver5);
             DisplayList("Numbers > than 5", numbersGreaterThan5);
 
-            
-            
+
+
         }
 
         // function that will return true or false if the number is even or odd.
@@ -43,7 +58,7 @@
         private static List<int> FilterArray(int[] intArray, NumberPredicate predicate)
         {
             var result = new List<int>();
-            foreach(int number in intArray)
+            foreach (int number in intArray)
             {
                 if (predicate(number))
                 {
@@ -51,12 +66,12 @@
                 }
 
             }
-            return result; 
+            return result;
         }
         private static void DisplayList(string description, List<int> list)
         {
             Console.Write(description);
-            foreach(var number in list)
+            foreach (var number in list)
             {
                 Console.Write($" {number} ");
             }
