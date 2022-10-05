@@ -23,8 +23,11 @@ namespace CodeFirstEF.Migrations
 
             modelBuilder.Entity("CodeFirstEF.Book", b =>
                 {
-                    b.Property<string>("Code")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Code")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Code"));
 
                     b.Property<string>("Author")
                         .IsRequired()
