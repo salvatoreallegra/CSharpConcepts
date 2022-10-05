@@ -13,7 +13,7 @@ namespace CodeFirstEF
         optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-            @"Data Source=(LocalDB)\MSSQLLocalDB;Database=Books;Integrated Security=True");
+            @"Data Source=LAPTOP-M3LHAD31;Initial Catalog=Books;encrypt=false;Integrated Security=True;Pooling=False");
         }
         public DbSet<Book> Books { get; set; }
     }
